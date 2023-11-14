@@ -11,6 +11,7 @@ jobs:
         with:
           browser: 'chrome'
           robot_reports_dir: public
+          robot_tests_dir: Tests
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         with:
