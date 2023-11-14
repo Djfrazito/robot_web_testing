@@ -10,7 +10,7 @@ jobs:
         uses: joonvena/robotframework-docker-action@v1.0
         with:
           browser: 'chrome'
-          robot_reports_dir: public
+          robot_reports_dir: reports
           robot_tests_dir: Tests
   generate_report:
         if: always()
@@ -22,6 +22,7 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: reports
+            report_path: reports
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v2.3
           with:
