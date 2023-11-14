@@ -1,10 +1,20 @@
-robot_test:
+on: [push]
+jobs:
+  robot_test:
     runs-on: ubuntu-latest
     name: Run Robot Framework Tests
-        steps:
-         - name: Checkout
-           uses: actions/checkout@v2
-         - name: Robot Framework
-           uses: joonvena/robotframework-docker-action@v1.0
-           with:
-           browser: 'chrome'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Robot Framework
+        uses: joonvena/robotframework-docker-action@v1.0
+        with:
+          browser: 'chrome'
+          robot_reports_dir: public
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+        
+
