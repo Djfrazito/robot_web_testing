@@ -9,7 +9,7 @@ jobs:
         with:
           browser: 'chrome'
           reports_dir: '${{ github.workspace }}/public'
-          tests_dir: '${{ github.workspace }}/Tests'
+          tests_dir: '${{ github.workspace }}/tests'
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         with:
