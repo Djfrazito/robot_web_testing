@@ -10,8 +10,8 @@ jobs:
         uses: joonvena/robotframework-docker-action@v1.0
         with:
           browser: 'chrome'
-          robot_reports_dir: ${{ github.workspace }}/public
-          robot_tests_dir: ${{ github.workspace }}/Tests
+          robot_reports_dir: ${{ github.workspace }}/../public
+          robot_tests_dir: ${{ github.workspace }}/../Tests
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         with:
